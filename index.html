@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="面试前1小时急救包 - 5分钟速览核心考点、自我介绍模板、反问话术、薪资谈判脚本。面试前焦虑？打开这个页面就够了。">
+<meta name="keywords" content="面试急救,面试前准备,面试临时抱佛脚,Java面试速成,自我介绍模板,反问面试官,薪资谈判,面试倒计时">
+<title>🚨 面试急救包 | 面试前1小时必看 | 2026 Java面试</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);color:#c9d1d9;line-height:1.8;min-height:100vh}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.alert-bar{background:linear-gradient(90deg,#da3633,#f85149);color:#fff;text-align:center;padding:15px;border-radius:12px;font-size:1.2em;font-weight:bold;margin-bottom:20px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.85}}
+.countdown-box{text-align:center;background:#161b22;border:2px solid #30363d;border-radius:12px;padding:25px;margin:20px 0}
+.countdown-box input{border:2px solid #30363d;background:#0d1117;color:#79c0ff;padding:10px 15px;border-radius:8px;font-size:1.1em;width:250px;text-align:center}
+.countdown-box button{background:#238636;color:#fff;border:none;padding:10px 25px;border-radius:8px;font-size:1.1em;cursor:pointer;margin-left:10px}
+.countdown-box button:hover{background:#2ea043}
+#timer{font-size:3em;color:#f0883e;font-weight:bold;margin:15px 0;font-family:monospace}
+.section{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px;margin:15px 0}
+.section h3{color:#58a6ff;margin-bottom:12px;font-size:1.2em}
+.card{background:#0d1117;padding:15px;border-radius:8px;margin:10px 0;border-left:3px solid #238636}
+.card h4{color:#d2a8ff;margin-bottom:5px}
+.hot-item{display:inline-block;background:#21262d;color:#79c0ff;padding:5px 12px;border-radius:15px;margin:4px;font-size:0.9em}
+.qr-section{text-align:center;background:linear-gradient(135deg,#161b22,#1a1a2e);border:2px solid #d2a8ff;border-radius:12px;padding:25px;margin:30px 0}
+.qr-section h3{color:#d2a8ff}
+.qr-section img{max-width:200px;border-radius:8px;margin:10px 0}
+.donate-btn{display:inline-block;background:#f0883e;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-size:1.1em;cursor:pointer;text-decoration:none;margin:10px}
+.donate-btn:hover{background:#e67e22}
+.progress{background:#21262d;border-radius:10px;height:8px;margin:8px 0;overflow:hidden}
+.progress-fill{background:#238636;height:100%;border-radius:10px}
+.tab{display:inline-block;padding:8px 16px;cursor:pointer;border-radius:8px 8px 0 0;margin:0 3px;font-size:0.9em}
+.tab.active{background:#161b22;color:#58a6ff;border:1px solid #30363d;border-bottom:none}
+.blink{animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.footer{text-align:center;color:#484f58;font-size:0.85em;margin:30px 0;padding:20px;border-top:1px solid #21262d}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="alert-bar">🚨 面试前1小时急救 — 这是你最需要的5分钟</div>
+
+<div class="countdown-box">
+<h3 style="color:#58a6ff">⏰ 面试倒计时</h3>
+<div id="timer">输入面试时间</div>
+<input type="datetime-local" id="interviewTime" onchange="startCountdown()">
+<button onclick="startCountdown()">开始倒计时</button>
+<div id="panic-box" style="display:none;margin-top:15px">
+    <p style="color:#f85149;font-size:1.3em" class="blink">⚠️ 还剩不到30分钟！快速浏览下方</p>
+</div>
+</div>
+
+<!-- 1. 自我介绍30秒 -->
+<div class="section">
+<h3>🎤 第一步：自我介绍（30秒速成版）</h3>
+<div class="card">
+<pre style="white-space:pre-wrap;background:none;padding:0"><code>面试官你好，我是[学校]软件工程应届生。
+有两个核心项目：
+① Spring AI + RAG智能知识库系统（Docker部署）
+② Spring Cloud Alibaba微服务秒杀（Redis Lua + 
+   RocketMQ削峰，QPS 5000+）
+技术栈：Spring Boot + MySQL + Redis + Docker。
+对贵司岗位很感兴趣，期待交流。</code></pre>
+</div>
+<p style="color:#8b949e;margin-top:10px">✏️ 把[学校]换成你的，<strong>照着念一遍</strong>就记住了</p>
+</div>
+
+<!-- 2. 核心考点速览 -->
+<div class="section">
+<h3>📋 第二步：3道必问题（面试前5分钟浏览）</h3>
+<div class="card">
+<h4>① HashMap底层原理？</h4>
+<p>数组+链表+红黑树。JDK8链表长度≥8且数组≥64转红黑树。put：hash→定位→头插/尾插→判断扩容。</p>
+</div>
+<div class="card">
+<h4>② Spring Boot自动配置原理？</h4>
+<p>@SpringBootApplication → @EnableAutoConfiguration → AutoConfigurationImportSelector → 加载META-INF/spring.factories → 按@Conditional条件装配Bean。</p>
+</div>
+<div class="card">
+<h4>③ Redis缓存穿透/击穿/雪崩？</h4>
+<p>穿透：布隆过滤器+空值缓存。击穿：互斥锁+逻辑过期。雪崩：随机TTL+多级缓存+限流。</p>
+</div>
+</div>
+
+<!-- 3. 反问面试官 -->
+<div class="section">
+<h3>💬 第三步：反问面试官（必问3句）</h3>
+<div class="card">
+<ol style="margin-left:20px">
+<li>"团队目前的技术栈和主要业务方向是什么？"</li>
+<li>"这个岗位的日常工作大概是什么样的？"</li>
+<li>"如果有幸入职，前三个月对我的期望是什么？"</li>
+</ol>
+<p style="color:#f0883e;margin-top:10px">⚠️ 千万别问"我表现怎么样"——把压力抛回给面试官</p>
+</div>
+</div>
+
+<!-- 4. 薪资谈判 -->
+<div class="section">
+<h3>💰 第四步：薪资谈判快速脚本</h3>
+<div class="card">
+<p><strong>HR问期望薪资：</strong></p>
+<p style="background:#0d1117;padding:10px;border-radius:5px">"我了解过市场行情，实习生日薪150-300元左右。我更看重团队和成长机会，薪资可以按公司标准来。"</p>
+<p><strong>被压价时：</strong></p>
+<p style="background:#0d1117;padding:10px;border-radius:5px">"理解公司的预算。除了薪资，我也想了解一下转正机会和培养机制。如果这些都明确，我对薪资可以灵活。"</p>
+</div>
+</div>
+
+<!-- 5. 高频考点速查  -->
+<div class="section">
+<h3>🔍 临场速查（30秒扫一遍）</h3>
+<div>
+<span class="hot-item">== vs equals</span>
+<span class="hot-item">HashMap扩容</span>
+<span class="hot-item">JVM内存模型</span>
+<span class="hot-item">GC算法</span>
+<span class="hot-item">synchronized锁升级</span>
+<span class="hot-item">volatile</span>
+<span class="hot-item">Spring IOC/AOP</span>
+<span class="hot-item">@Transactional失效</span>
+<span class="hot-item">Redis缓存三穿</span>
+<span class="hot-item">MySQL索引失效</span>
+<span class="hot-item">消息队列削峰</span>
+<span class="hot-item">分布式锁</span>
+<span class="hot-item">CAP定理</span>
+<span class="hot-item">RESTful规范</span>
+<span class="hot-item">JWT vs Session</span>
+</div>
+</div>
+
+<!-- 赞赏 -->
+<div class="qr-section">
+<h3>☕ 急救包救了你？请我喝杯咖啡</h3>
+<img src="../wechat-qr.png" alt="微信赞赏码" style="max-width:220px" onerror="this.src='mm_facetoface_collect_qrcode_1779427130944.png'">
+<p style="color:#8b949e;margin:8px 0">微信扫码赞赏 · 持续更新更多急救内容</p>
+<a href="../arsenal/index.html" class="donate-btn">📦 更多免费工具 →</a>
+</div>
+
+<div class="footer">
+🔥 30+篇面试文章 · 20+免费工具 · 全部免费开源<br>
+<a href="https://Abyte-zym.github.io/arsenal" style="color:#58a6ff">Abyte-zym.github.io/arsenal</a>
+</div>
+</div>
+
+<script>
+function startCountdown(){
+    var input = document.getElementById('interviewTime');
+    if(!input.value) return;
+    var target = new Date(input.value).getTime();
+    var timer = document.getElementById('timer');
+    var panic = document.getElementById('panic-box');
+    setInterval(function(){
+        var now = new Date().getTime();
+        var diff = target - now;
+        if(diff <= 0){ timer.innerHTML = '面试进行中...'; return; }
+        var h = Math.floor(diff/3600000);
+        var m = Math.floor((diff%3600000)/60000);
+        var s = Math.floor((diff%60000)/1000);
+        timer.innerHTML = (h<10?'0'+h:h) + ':' + (m<10?'0'+m:m) + ':' + (s<10?'0'+s:s);
+        if(diff < 1800000) panic.style.display = 'block';
+    }, 1000);
+}
+</script>
+</body>
+</html>
